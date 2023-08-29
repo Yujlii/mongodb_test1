@@ -19,4 +19,4 @@ RUN tar -zxvf mongodb.tar.gz -C /opt/ && \
 EXPOSE 27017
 
 # Start MongoDB on container startup
-CMD ["/opt/mongodb/bin/mongod"]
+CMD ["/opt/mongodb/bin/mongod", "--bind_ip", "0.0.0.0"]
