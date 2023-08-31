@@ -3,10 +3,10 @@ FROM python:3.8
 
 # Download and setup MongoDB
 RUN wget -O mongodb.tar.gz \
-    "https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2004-5.0.3.tgz" && \
-    tar -zxvf mongodb.tar.gz -C /opt/ && \
-    mv /opt/mongodb-linux-x86_64-ubuntu2004-5.0.3 /opt/mongodb && \
-    rm mongodb.tar.gz
+    "https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2004-5.0.3.tgz" 
+RUN tar -zxvf mongodb.tar.gz -C /opt/
+RUN mv /opt/mongodb-linux-x86_64-ubuntu2004-5.0.3 /opt/mongodb 
+RUN rm mongodb.tar.gz
 
 # Setup data directory and permissions
 RUN mkdir -p /data/db && \
